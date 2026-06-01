@@ -6,17 +6,17 @@ Zib | Methode | Sort | Count | Endpoint | Profile
 ----|---------|------|-------|----------|--------
 Ademhaling| GET |||| 
 Adresgegevens | GET ||||
-AlcoholGebruik | GET ||||
+AlcoholGebruik | GET ||| /Observation?patient={patientId}&code=http://snomed.info/sct\|228273003 |
 Alert | GET | | | /Flag?patient={patientId}&_profile=http://nictiz.nl/fhir/StructureDefinition/zib-Alert | https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.10/files/1954733
-AllergieIntoleratie | GET |||/fhir/AllergyIntolerance?patient={patientId}&_profile=http://nictiz.nl/fhir/StructureDefinition/zib-AllergyIntolerance|https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317138
-BehandelAanwijzing
+AllergieIntoleratie | GET |||/fhir/AllergyIntolerance?patient={patientId}| http://nictiz.nl/fhir/StructureDefinition/zib-AllergyIntolerance
+BehandelAanwijzing | GET ||| /Consent?category=http://snomed.info/sct\|11291000146105 en/of /Consent?category=http://snomed.info/sct\|11341000146107|
 Behandeldoel
-Betaler
+Betaler | GET ||| /Coverage?_include=Coverage:payor:Patient&_include=Coverage:payor:Organization | 
 Bloeddruk | GET | Date DESC | 5 | /Observation?patient={patientId}&_profile=http://nictiz.nl/fhir/StructureDefinition/zib-BloodPressure&_sort=-date&_count=5 | https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.10/files/1954744
 BurgelijkeStaat
-Contact
+Contact | GET ||| /Encounter?class=http://hl7.org/fhir/v3/ActCode\|IMP,http://hl7.org/fhir/v3/ActCode\|ACUTE,http://hl7.org/fhir/v3/ActCode\|NONAC
 Contactgegevens
-ContactPersoon
+ContactPersoon | | | | See Patient, Patient.contact|
 Darmfunctie
 DecubitusWond
 Gezinssituatie
@@ -35,11 +35,11 @@ O2Saturatie
 Patient | POST | | 1 | see [Patient Context](https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.10/files/1954638) in Volume 3 of Zorginzage | https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.10/files/1954638
 PartipatieInMaatschappij
 Polsfrequentie
-Probleem
+Probleem | GET ||| /Condition | 
 SNAQ65+score
 SNAQRCscore
 SOEPVerslag (2020)
-TekstUitslag
+TekstUitslag 
 Toedieningsafspraak
 Vaccinatie
 VermogenTotDrinken
@@ -50,14 +50,14 @@ VermogenTotVerpleegtechnischeHandelingen
 VermogenTotZelfstandigMedicatiegebruik
 VermogenTotZichKleden
 VermogenTotZichWassen
-Verrichting
+Verrichting | GET ||| /Procedure?category=http://snomed.info/sct\|387713003 | 
 Voedingsadvies
 VrijheidsbeperkendeMaatregelen
-Wilsverklaring
+Wilsverklaring | GET ||| /Consent?patient={patientId}&_profile=http://nictiz.nl/fhir/StructureDefinition/zib-AdvanceDirective | https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.10/files/1954726
 Wond
-Woonsituatie
+Woonsituatie | GET ||| /Observation?patient={patientId}&code=http://snomed.info/sct|365508006 | 
 Zorgaanbieder
-ZorgTeam
+ZorgTeam | GET ||| /CareTeam | 
 Zorgverlener
 Correspondentie
 
