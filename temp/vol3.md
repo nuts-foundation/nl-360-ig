@@ -4,13 +4,13 @@ The 360° specifications use the following healthcare information models (HCIM's
 
 Zib | Methode | Sort | Count | Endpoint | Profile
 ----|---------|------|-------|----------|--------
-Ademhaling| GET ||| /Observation?patient={patientId}&code=http://snomed.info/sct\|422834003 | 
-Adresgegevens | GET ||| See Patient, Patient.address | https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.3.2/files/3018955
-AlcoholGebruik | GET ||| /Observation?patient={patientId}&code=http://snomed.info/sct\|228273003 |
-Alert | GET | | | /Flag?patient={patientId} | https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.10/files/1954733
-AllergieIntoleratie | GET |||/fhir/AllergyIntolerance?patient={patientId}| http://nictiz.nl/fhir/StructureDefinition/zib-AllergyIntolerance
-BehandelAanwijzing | GET ||| /Consent?category=http://snomed.info/sct\|11291000146105,http://snomed.info/sct\|11341000146107 |
-Behandeldoel
+Ademhaling | GET | Date DESC | 5 | /Observation?patient={patientId}&code=http://snomed.info/sct\|422834003&_sort=-date&_count=5 | ?WHAT IS THE CORRECT PROFILE?
+Adresgegevens | GET | n/a | n/a | See Patient, Patient.address | https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.3.2/files/3018955
+AlcoholGebruik | GET | Date DESC | 5 | /Observation?patient={patientId}&code=http://snomed.info/sct\|228273003&_sort=-date&_count=5 | https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317134
+Alert | GET | Date DESC | no limit | /Flag?patient={patientId}&_sort=-date ?HOW TO FILTER ON ACTIVE, status is not a search param? | https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.10/files/1954733
+AllergieIntoleratie | GET | Date DESC | no limit | /fhir/AllergyIntolerance?patient={patientId}&_sort=-date ?HOW TO FILTER ON ACTIVE, status is not a search param? | http://nictiz.nl/fhir/StructureDefinition/zib-AllergyIntolerance
+BehandelAanwijzing | GET | Date DESC | no limit | /Consent?category=http://snomed.info/sct\|11291000146105,http://snomed.info/sct\|11341000146107 ?HOW TO FILTER ON ACTIVE? | ?USE WAY OF BGZ OR WAY OF PZP HERE?
+Behandeldoel | GET |
 Betaler | GET ||| /Coverage?_include=Coverage:payor:Patient&_include=Coverage:payor:Organization | 
 Bloeddruk | GET | Date DESC | 5 | /Observation?patient={patientId}&code=http://loinc.org\|85354-9&_sort=-date&_count=5 | https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.10/files/1954744
 BurgelijkeStaat | GET ||| See Patient, Patient.maritalStatus | n/a
@@ -38,7 +38,7 @@ Polsfrequentie | GET ||| /Observation?patient={patientId}&code=http://loinc.org\
 Probleem | GET ||| /Condition?patient={patientId} | https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317327
 SNAQ65+score | GET ||| /Observation?patient={patientId}&code=http://snomed.info/sct\|108321000146101 | https://simplifier.net/nictizstu3-zib2017/zib-snaq65plusscore
 SNAQRCscore | GET ||| /Observation?patient={patientId}&code=http://snomed.info/sct\|108311000146106 | https://simplifier.net/nictizstu3-zib2017/zib-snaqrcscore
-SOEPVerslag (2020) ||| /Composition?patient={patientId}&type=http://loinc.org\|67781-5 | n/a
+SOEPVerslag (2020) | GET | Date DESC | 5 | /Composition?patient={patientId}&type=http://loinc.org\|67781-5&_sort=-date&_count=5 | n/a
 TekstUitslag | GET ||| /DiagnosticReport ?? | 
 Toedieningsafspraak
 Vaccinatie | GET ||| /Immunization?status=completed | 
