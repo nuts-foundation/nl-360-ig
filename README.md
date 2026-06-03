@@ -1,5 +1,5 @@
-# nuts-knooppunt-specs
-Specifications of the Nuts Knooppunt
+# nuts-clientbeeld360-specs
+Specifications for thie clientbeeld 360 use case
 
 ## Local Development
 
