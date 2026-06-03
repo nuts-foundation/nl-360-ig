@@ -3,11 +3,11 @@
 # │  used properties are included. For a list of all supported properties and their functions,     │
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: fhir.nl.zorginzage
-canonical: http://nuts-foundation.github.io/nl-zorginzage-ig
-url: http://nuts-foundation.github.io/nl-zorginzage-ig/ImplementationGuide/fhir.nl.zorginzage
-name: NlZorginzageIG
-title: Netherlands - Zorginzage Implementation Guide
+id: fhir.nl.clientbeeld360
+canonical: https://nuts-foundation.github.io/nl-360-ig
+url: https://nuts-foundation.github.io/nl-360-ig/ImplementationGuide/fhir.nl.clientbeeld360
+name: Clientbeeld360IG
+title: Netherlands - Clientbeeld 360 Implementation Guide
 language: en-US
 # description: Example Implementation Guide for getting started with SUSHI
 status: active # draft | active | retired | unknown
@@ -29,7 +29,7 @@ publisher:
 dependencies:
   nictiz.fhir.nl.r4.nl-core: 0.12.0-beta.4
   # nictiz.fhir.nl.r4.zib2020: 0.12.0-beta.4
-  # hl7.fhir.eu.base: 0.1.0-ballot # Depending on discussion with Nictiz if we want to base our profiles on this or not
+  # hl7.fhir.eu.base: 0.1.0-ballot # Depending on discussion with Nictiz iffh w e want to base our profiles on this or not
 #
 #
 # The pages property corresponds to IG.definition.page. SUSHI can
