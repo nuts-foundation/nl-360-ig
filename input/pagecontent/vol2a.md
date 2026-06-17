@@ -15,7 +15,7 @@ technical enforcement during the data exchange.
 The access policy at the data holder organisation for accessing data by another healthcare organisation enforces the following rules:
 
 - The requesting organisation is identified by a `ura` and `facility_type`
-- The requesting organisation has been authenticated
+- The requesting organisation has been authenticated successfully
 - The requesting health care professional is identified by a `identifier` and a `role`
     - These attributes are locally defined by the requesting organisation
     - No further verification is necessary
