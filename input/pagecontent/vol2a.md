@@ -18,7 +18,7 @@ The access policy at the data holder organisation for accessing data by another 
 - The requesting organisation has been authenticated successfully
 - The requesting health care professional is identified by a `identifier` and a `role`
     - These attributes are locally defined by the requesting organisation
-    - No further verification is necessary
+    - No further verification (cryptographically or content-wise) is performed
 
 A FHIR capability statement is provided for this use case. The source will verify the request conforms to the capability
 statement. In doing so, the source at least verifies the following properties:
