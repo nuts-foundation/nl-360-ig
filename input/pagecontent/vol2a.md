@@ -8,7 +8,7 @@ https://nuts-foundation.github.io/nl-zorginzage-ig/
 
 ### Authorisation
 
-During the data exchange we will only authorise health care providers at the data source. The data user must do
+During the data exchange the data holder organisation will only authorise the data user on organisation-level. The data user organisation MUST perform
 authorisation for the health care professional and their role locally. The latter is a hard requirement, but there is no
 technical enforcement during the data exchange.
 
