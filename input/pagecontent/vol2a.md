@@ -11,7 +11,7 @@ https://nuts-foundation.github.io/nl-zorginzage-ig/
 The national reference index ('nationale verwijsindex', 'NVI') is not yet launched at the time of writing. This limits the options for an indexed
 pull scenario.
 
-- A broad BSN broadcast based on addressing information is not allowed
+- An undirected BSN broadcast based on addressing information is not allowed
 - If a legal basis is established between to organisations for the data exchange, it's allowed to search for a patient
 - If the data holder is part of a locally registered CareTeam, it's allowed to search for a patient
 
