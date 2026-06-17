@@ -33,7 +33,7 @@ The zorginzage specification requires a patient context to be present, meaning t
 from the request.
 
 - /Patient/_search requests may contain a BSN identifier
-- All other requests must be checked for a reference to the patient resource.
+- All other requests must be checked for a literal reference to the patient resource.
     - The rego policy for the specification will clarify which fields to use for each ZIB
 
 The data source must verify the legal basis of the data exchange in at least one of these ways:
