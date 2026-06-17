@@ -36,7 +36,7 @@ from the request.
 - All other requests must be checked for a literal reference to the patient resource.
     - The rego policy for the specification will clarify which fields to use for each ZIB
 
-The data source must verify the legal basis of the data exchange in at least one of these ways:
+The data holder organisation **MUST** verify the legal basis of the data exchange in at least one of these ways:
 
 - Consent has been registered in Mitz
 - The requesting organisation is part of the locally registered CareTeam
