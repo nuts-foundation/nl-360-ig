@@ -20,7 +20,7 @@ The access policy at the data holder organisation for accessing data by another 
     - These attributes are locally defined by the requesting organisation
     - No further verification (cryptographically or content-wise) is performed
 
-A FHIR capability statement is provided for this use case. The source will verify the request conforms to the capability
+A FHIR capability statement is provided for this use case. The source will verify whether the request conforms to the capability
 statement. In doing so, the source at least verifies the following properties:
 
 - The interaction is allowed
