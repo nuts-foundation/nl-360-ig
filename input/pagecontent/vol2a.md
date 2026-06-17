@@ -12,7 +12,7 @@ During the data exchange the data holder organisation will only authorise the da
 authorisation for the health care professional and their role locally. The latter is a hard requirement, but there is no
 technical enforcement during the data exchange.
 
-The access policy at the source for accessing data by another health care provider enforces the following rules:
+The access policy at the data holder organisation for accessing data by another healthcare organisation enforces the following rules:
 
 - The requesting organisation is identified by a `ura` and `facility_type`
 - The requesting organisation has been authenticated
