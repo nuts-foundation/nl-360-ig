@@ -8,7 +8,7 @@ https://nuts-foundation.github.io/nl-zorginzage-ig/
 
 ### Localisation
 
-Since the national reference index is not yet launched at the time of writing, which limits the options for an indexed
+The national reference index ('nationale verwijsindex', 'NVI') is not yet launched at the time of writing. This limits the options for an indexed
 pull scenario.
 
 - A broad BSN broadcast based on addressing information is not allowed
