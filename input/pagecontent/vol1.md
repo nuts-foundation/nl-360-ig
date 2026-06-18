@@ -1,6 +1,6 @@
 ### Inleiding
 
-Deze implementatiegids 360-graden-cliëntbeeld bevat de afspraken en specificaties die nodig zijn voor de use case "360 graden cliëntbeeld". Het doel van deze implementatiegids is het versnellen van de realisatie van deze use case. 
+Deze implementatiegids 360-graden-cliëntbeeld bevat de afspraken en specificaties die nodig zijn voor de use case "360 graden cliëntbeeld". Het doel van deze implementatiegids is het technisch definiëren van deze use case. 
 
 ### Functioneel Ontwerp
 
