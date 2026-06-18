@@ -1,6 +1,6 @@
 ### Overview
 
-Deze implementatiegids bevat de afspraken en specificaties voor de use case 360° cliëntbeeld. Een 360° cliëntbeeld stelt zorgprofessionals in staat om op elk gewenst moment een integraal beeld op te roepen van de cliënt waarover zij aanvullende informatie
+Deze implementatiegids bevat de afspraken en specificaties voor de use case 360° cliëntbeeld. 360° cliëntbeeld stelt zorgprofessionals in staat om op elk gewenst moment een integraal beeld op te roepen van de cliënt waarover zij aanvullende informatie
 nodig hebben. Hierbij worden patiëntdata die zijn opgeslagen bij andere zorgorganisaties op een gebruiksvriendelijke, veilige en schaalbare manier opgehaald.
 
 ### Organization of This Guide
