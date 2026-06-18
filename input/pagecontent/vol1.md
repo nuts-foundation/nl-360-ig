@@ -4,7 +4,7 @@ Deze implementatiegids 360-graden-cliëntbeeld bevat de afspraken en specificati
 
 ### Functioneel Ontwerp
 
-Deze implementatiegids geeft technische invulling aan het [Functioneel Ontwerp Toepassing op Nuts 360° cliëntbeeld](https://github.com/nuts-foundation/nl-360-ig/blob/f9e79a041d0ed197eba06474ddeae1c13cc28a3e/docs/fo.pdf).
+Deze implementatiegids geeft technische invulling aan het [Functioneel Ontwerp Toepassing op Nuts 360° cliëntbeeld](https://github.com/nuts-foundation/nl-360-ig/raw/f9e79a041d0ed197eba06474ddeae1c13cc28a3e/docs/fo.pdf).
 
 ### Relatie tot generieke Zorginzage-specificatie
 
