@@ -14,7 +14,7 @@ Deze implementatiegids is gebaseerd op de [Zorginzage-specificatie](https://nuts
 
 Rol | Uitvoerder
 ----|--------
-Eigenaar van de specificatie | ActiZ
+Eigenaar van de specificatie | Stichting Nuts
 Deelnemer | XIS-leverancier of platform-leverancier
 Eigenaar Discovery Service | n.t.b.
 
