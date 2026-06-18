@@ -1,8 +1,8 @@
-Volume 3 of this specifcation describes the agreements and specifications about content.
+Volume 3 of this specification describes the agreements and specifications about content.
 
 # Data set definitions
 
-The 360° specifications use the healthcare information models (HCIM's, also called "zibs") and FHIR specifications described as specified in the following table.
+The 360° specification uses the healthcare information models (HCIM's, also called "zibs") and FHIR specifications as specified in the following table.
 
 | Zib | Methode | Sort | Count | Endpoint | Profile |
 |-----|---------|------|-------|----------|---------|
@@ -65,5 +65,4 @@ The 360° specifications use the healthcare information models (HCIM's, also cal
 
 # Conformance to Zorginzage-specification
 
-The 360° specifications conforms to sections 5.2 and 5.3 of [Volume 3 of the Zorginzage-specification](https://build.fhir.org/ig/nuts-foundation/nl-zorginzage-ig/vol3.html).
-
+The 360° specification conforms to sections 5.2 and 5.3 of [Volume 3 of the Zorginzage-specification](https://build.fhir.org/ig/nuts-foundation/nl-zorginzage-ig/vol3.html).
