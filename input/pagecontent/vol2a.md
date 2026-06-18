@@ -6,6 +6,10 @@ relevant implementation guide first.
 
 https://nuts-foundation.github.io/nl-zorginzage-ig/
 
+### Authentication
+
+The 360-specification reuses the authentication specifications of the Zorginzage-specification.
+
 ### Localisation
 
 The national reference index ('nationale verwijsindex', 'NVI') is not yet launched at the time of writing. This limits the options for an indexed
@@ -16,6 +20,11 @@ pull scenario.
 - If a potential data holder organisation is member of a `CareTeam`-resource or another index registered at the data user organisation, the data user organisation is allowed to search for a patient at that potential data holder organisation
 
 The mechanism of searching and retrieving the patient id is described in the zorginzage specification.
+
+### Addressing
+
+The 360-specification reuses the addressing specifications of the Zorginzage-specification.
+The 360-specification uses the following use-case-identifier `360-graden`.
 
 ### Authorisation
 
