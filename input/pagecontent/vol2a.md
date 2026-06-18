@@ -13,6 +13,6 @@ pull scenario.
 
 - An undirected BSN broadcast based on addressing information is not allowed
 - If a legal basis is established between the data user organisation and a potential data holder organisation for the data exchange, the data user organisation is allowed to search for a patient at that potential data holder organisation.
-- If the data holder is part of a locally registered CareTeam, it's allowed to search for a patient
+- If a potential data holder organisation is member of a `CareTeam`-resource or another index registered at the data user organisation, the data user organisation is allowed to search for a patient at that potential data holder organisation
 
 The mechanism of searching and retrieving the patient id is described in the zorginzage specification.
