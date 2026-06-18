@@ -32,7 +32,7 @@ statement. In doing so, the source at least verifies the following properties:
 The zorginzage specification requires a patient context to be present, meaning that a patient identifier must be derived
 from the request.
 
-- /Patient/_search requests may contain a BSN identifier
+- /Patient/_search requests **MUST** contain a BSN identifier as specified in [Volume 3 of the Zorginzage-specification](https://nuts-foundation.github.io/nl-zorginzage-ig/vol3.html#patient-context).
 - All other requests must be checked for a literal reference to the patient resource.
     - The rego policy for the specification will clarify which fields to use for each ZIB
 
