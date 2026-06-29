@@ -10,17 +10,17 @@ name: Clientbeeld360IG
 title: Netherlands - Clientbeeld 360 Implementation Guide
 language: en-US
 # description: Example Implementation Guide for getting started with SUSHI
-status: active # draft | active | retired | unknown
-version: 1.0.0
+status: draft # draft | active | retired | unknown
+version: 0.8.0
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2026+
-releaseLabel: release # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
+releaseLabel: draft # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
 license: EUPL-1.2 # https://www.hl7.org/fhir/valueset-spdx-license.html
 jurisdiction: urn:iso:std:iso:3166#NL "Netherlands" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
-  name: Stichting ActiZ
-  url: https://www.actiz.nl
-  email: DigitaalDenkenenDoen@Actiz.nl
+  name: Stichting Nuts
+  url: https://www.nuts.nl
+  email: info@nuts.nl
 
 
 # The dependencies property corresponds to IG.dependsOn. The key is the
@@ -89,33 +89,10 @@ parameters:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
-  Volume 1:
-    Inleiding: vol1.html
-    Procesbeschrijving: vol1.html#procesbeschrijving
-    Principes: vol1.html#principes
-    Use cases: vol1.html#use-cases
-    Rollen en verantwoordelijkheden: vol1.html#rollen-en-verantwoordelijkheden
-    Rollen en uitvoerders: vol1.html#rollen-en-uitvoerders
-    Roadmap: vol1.html#roadmap
-    Releasebeleid: vol1.html#releasebeleid
-  Volume 2a:
-    Exchange patterns: vol2a.html
-    Principles: vol2a.html#principles
-    Identification: vol2a.html#identification
-    Authentication: vol2a.html#authentication
-    Addressing: vol2a.html#addressing
-    Localisation: vol2a.html#localisation
-    Authorisation: vol2a.html#authorisation
-    Consent: vol2a.html#consent
-    Network security: vol2a.html#network-security
-    Registering a new use case: vol2a.html#registering-a-new-use-case
-  Volume 2b:
-    Registration at discovery service: vol2b.html#registration-at-discovery-service
-    Pull: vol2b.html#pull
-  Volume 3:
-    Data set definitions: vol3.html#data-set-definitions
-    Individual resource requests: vol3.html#individual-resource-requests
-    Patient context: vol3.html#patient-context
+  Volume 1: vol1.html
+  Volume 2a: vol2a.html
+  Volume 2b: vol2b.html
+  Volume 3: vol3.html
   History: history.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮

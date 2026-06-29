@@ -1,4 +1,4 @@
-Volume 3 of this specification describes the agreements and specifications about content.
+Volume 3 of this specifcation describes the agreements and specifications about content.
 
 # Data set definitions
 
@@ -79,5 +79,4 @@ an OR list (comma-separated): the R4 `nl-core` profile and the STU3 `zib2017` pr
 
 # Conformance to Zorginzage-specification
 
-The 360° specifications conforms to sections 5.2 and 5.3 of [Volume 3 of the Zorginzage-specification](https://build.fhir.org/ig/nuts-foundation/nl-zorginzage-ig/vol3.html).
-
+The 360° specification conforms to sections 5.2 and 5.3 of [Volume 3 of the Zorginzage-specification](https://build.fhir.org/ig/nuts-foundation/nl-zorginzage-ig/vol3.html).
