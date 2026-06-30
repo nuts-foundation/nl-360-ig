@@ -28,7 +28,8 @@ publisher:
 # use cases, the value can be an object with keys for id, uri, and version.
 dependencies:
   nictiz.fhir.nl.r4.nl-core: 0.12.0-beta.4
-  # nictiz.fhir.nl.r4.zib2020: 0.12.0-beta.4
+  nictiz.fhir.nl.r4.zib2020: 0.12.0-beta.4
+  nictiz.fhir.nl.r4.medicationprocess9: 2.0.0-rc.7 # provides the R4 mp-* medication profiles (Medicatieafspraak, MedicatieGebruik2, Toedieningsafspraak)
   # hl7.fhir.eu.base: 0.1.0-ballot # Depending on discussion with Nictiz iffh w e want to base our profiles on this or not
 #
 #
