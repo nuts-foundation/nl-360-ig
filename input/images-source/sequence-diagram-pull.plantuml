@@ -62,10 +62,7 @@ User -> req: request information for Patient
         - use access token received in step 9
         end note
         req -> PEP++: GET /CapabilityStatement
-            PEP -> cn++ : introspect access token\nPOST /internal/auth/v2/accesstoken/introspect
-            PEP <-- cn-- : valid token + requesting_URA + USER{name,userRole,identifier}
-            PEP -> PEP: Authorization \n(Legal basis to be determined by use case, e.g. patient consent and/or treatment relationship)
-            PEP -> Fhir++: POST /fhir/Patient?search
+            PEP -> Fhir++: GET /CapabilityStatement
             return: CapabilityStatement Fhir resource
         return: CapabilityStatement Fhir resource
         
