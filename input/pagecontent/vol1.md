@@ -26,7 +26,7 @@ ontwerp.
 Het FO schets voor **autorisatie** een situatie waarbij het wenselijk is regionale variatie in te bouwen. Voor
 bronsystemen is er daarom voor gekozen alleen op organisatie te autoriseren. Wel is het verplicht zorgverlener
 informatie mee te geven zodat het bronsysteem een audit trail kan opbouwen. Het raadplegende systeem moet daarnaast op
-basis van de regionale afspraken lokaal de autorisatie op zorgaanbieder rol toepassen.
+basis van de regionale afspraken lokaal de autorisatie op zorgverlenerrol toepassen.
 
 Voor **toestemmingen** laat het FO open op welke manier die toestemming is vastgelegd. De techniek dwingt echter af dat
 we de mogelijkheden benoemen zodat deze controle ook bij de bron kan worden ingebouwd. Er is daarom omschreven in volume
