@@ -35,7 +35,7 @@ we de mogelijkheden benoemen zodat deze controle ook bij de bron kan worden inge
 Als uitgangspunt wordt er in het FO omschreven dat er gebruik wordt gemaakt van Zorginformatiebouwstenen (Zibs) en FHIR API's
 . Het is gebruikelijk in FHIR om per resource (of vooraf gedefinieerde samenstelling resources) een bevraging te doen. Ook is er vastgelegd in
 het FO dat een progressieve opbouw wenselijk is zodat gegevens kunnen worden weergegeven op het moment dat ze
-beschikbaar komen, niet als de hele data set overgebracht is. Om die redenen is er voor gekozen queries op het niveau
+beschikbaar komen, en weergave niet pas kan plaatsvinden wanneer de gehele dataset is overgebracht. Om die redenen is ervoor gekozen queries op het niveau
 van zibs en niet op toepassing te organiseren.
 
 ### Rollen en uitvoerders
