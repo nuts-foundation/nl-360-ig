@@ -59,7 +59,7 @@ User -> req: request information for Patient
 
         note right of req 
         - Retrieve CapabilityStatement to be able to only send requests that the Data holder organisation supports
-        - use access token received in step 9
+        - no access token needed
         end note
         req -> PEP++: GET /CapabilityStatement
             PEP -> Fhir++: GET /CapabilityStatement
