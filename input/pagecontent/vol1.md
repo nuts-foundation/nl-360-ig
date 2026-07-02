@@ -24,7 +24,7 @@ Waar volume 2 een technisch inhoudelijk uitwerking bevat volgt hier een toelicht
 ontwerp.
 
 Het FO schets voor **autorisatie** een situatie waarbij het wenselijk is regionale variatie in te bouwen. Voor
-bronsystemen is er daarom voor gekozen alleen op organisatie te autoriseren. Wel is het verplicht zorgaanbieder
+bronsystemen is er daarom voor gekozen alleen op organisatie te autoriseren. Wel is het verplicht zorgverlener
 informatie mee te geven zodat het bronsysteem een audit trail kan opbouwen. Het raadplegende systeem moet daarnaast op
 basis van de regionale afspraken lokaal de autorisatie op zorgaanbieder rol toepassen.
 
