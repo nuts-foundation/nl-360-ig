@@ -9,7 +9,6 @@ participant XIS as req
 participant "Nuts-node" as rn
 end box
 
-
 box Data holder organisation `B`\n
 participant "Nuts-node" as cn
 boundary PEP
@@ -43,30 +42,46 @@ User -> req: request information for Patient
 
         ==get Patient resource including patient-id==
 
-        note right of req: POST-based Patient search on BSN
+        note right of req
+        - POST-based Patient search on BSN
+        - use access token received in step 9
+        end note
         req -> PEP++: POST /fhir/Patient/_search
-        PEP -> cn++ : introspect access token\nPOST /internal/auth/v2/accesstoken/introspect
-        PEP <-- cn-- : valid token + requesting_URA + USER{name,userRole,identifier}
-        PEP -> PEP: Authorization \n(Legal basis to be determined by use case, e.g. patient consent and/or treatment relationship)
-        PEP -> Fhir++: POST /fhir/Patient?search
-        return: Patient Fhir resource (with patient-id)
+            PEP -> cn++ : introspect access token\nPOST /internal/auth/v2/accesstoken/introspect
+            PEP <-- cn-- : valid token + requesting_URA + USER{name,userRole,identifier}
+            PEP -> PEP: Authorization \n(Legal basis to be determined by use case, e.g. patient consent and/or treatment relationship)
+            PEP -> Fhir++: POST /fhir/Patient?search
+            return: Patient Fhir resource (with patient-id)
         return: Patient Fhir resource (with patient-id)
 
+        |||
+        == Retrieve capability statement of Data holder organisation==
+
+        note right of req 
+        - Retrieve CapabilityStatement to be able to only send requests that the Data holder organisation supports
+        - no access token needed
+        end note
+        req -> PEP++: GET /CapabilityStatement
+            PEP -> Fhir++: GET /CapabilityStatement
+            return: CapabilityStatement Fhir resource
+        return: CapabilityStatement Fhir resource
+        
         |||
         == Retrieve other resources ==
 
         note right of req
-        - Other resources are gathered based on internal patient-id of data holder organisation (received in step 16)
-        - access token received in step 9 can be reused in loop below
+        - Other resources are queried using the internal patient-id of Data holder organisation received in step 16
+        - Queries MUST only contain the profiles that are part of the CapabilityStatement of the Data holder organisation
+        - Queries use access token received in step 9
         end note
         loop For each resource except Patient
             req -> PEP++: GET /fhir/{resource}?patient={patient-id}
                 PEP -> cn++ : introspect access token\nPOST /internal/auth/v2/accesstoken/introspect
-                    PEP <-- cn-- : valid token + requesting_URA + USER{name,userRole,identifier}
+                PEP <-- cn-- : valid token + requesting_URA + USER{name,userRole,identifier}
                 PEP -> PEP: Authorization \n(Legal basis to be determined by use case, e.g. patient consent and/or treatment relationship)
                 PEP -> Fhir++: GET /fhir/{resource}?patient={patient-id}
                 return: Fhir resource
-                return: Fhir Resource
+            return: Fhir resource
         end loop
 
     end loop
@@ -76,11 +91,3 @@ User -> req: request information for Patient
     User <- req --: Display external Patient information
 
 @enduml
-
-
-
-
-
-
-
-
