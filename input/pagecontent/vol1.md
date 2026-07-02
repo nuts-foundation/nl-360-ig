@@ -33,7 +33,7 @@ we de mogelijkheden benoemen zodat deze controle ook bij de bron kan worden inge
 2 dat er drie manieren zijn waarop toestemming verleend kan worden in het bronsysteem.
 
 Als uitgangspunt wordt er in het FO omschreven dat er gebruik wordt gemaakt van Zorginformatiebouwstenen (Zibs) en FHIR API's
-standaard. Het is gebruikelijk in FHIR per resource of groep resources een bevraging te doen. Ook is er vastgelegd in
+. Het is gebruikelijk in FHIR om per resource (of vooraf gedefinieerde samenstelling resources) een bevraging te doen. Ook is er vastgelegd in
 het FO dat een progressieve opbouw wenselijk is zodat gegevens kunnen worden weergegeven op het moment dat ze
 beschikbaar komen, niet als de hele data set overgebracht is. Om die redenen is er voor gekozen queries op het niveau
 van zibs en niet op toepassing te organiseren.
