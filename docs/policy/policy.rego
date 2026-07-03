@@ -13,7 +13,7 @@ import rego.v1
 #   - The request must conform to the FHIR CapabilityStatement (interaction, params,
 #     (reverse) includes and profiles are verified by the data holder organisation before policy evaluation;
 #     the data holder organisation signals this with `capability_checked == true`).
-#   - Authorisation happens on organisation-level only. The requesting organisation is
+#   - Authorisation happens on organisation-level only. The data user organisation is
 #     identified by a `ura` and `facility_type` and MUST have been authenticated
 #     successfully. The authentication itself is reused from the Zorginzage-specification
 #     and is performed by the authentication layer before this policy runs; the source
@@ -21,12 +21,12 @@ import rego.v1
 #     which this policy requires to be present.
 #   - The requesting health care professional is identified by an id and a role
 #     (`input.subject.user.id` and `input.subject.user.role`). These are locally defined by
-#     the requesting organisation and are not verified (cryptographically or content-wise);
+#     the data user organisation and are not verified (cryptographically or content-wise);
 #     authorisation of the professional and their role is performed locally and is out of
 #     scope for the source. This policy only requires both to be present, for audit purposes.
 #   - The data holder organisation MUST verify the legal basis of the exchange in at least one of these ways:
 #       * consent has been registered in Mitz, or
-#       * the requesting organisation is part of the locally registered CareTeam, or
+#       * the data user organisation is part of the locally registered CareTeam, or
 #       * the exchange has another non-technical legal basis (e.g. a GDPR data processing
 #         agreement). This last one cannot be established technically and is signalled to
 #         the policy as context.
@@ -71,7 +71,7 @@ request_conforms_fhir_capabilitystatement if {
 	input.action.fhir_rest.capability_checked == true
 }
 
-# The requesting organisation must have been authenticated. The authentication layer asserts
+# The data user organisation must have been authenticated. The authentication layer asserts
 # the authenticated organisation identity (its URA) in input.subject.organization.ura; we
 # require it to be present and non-empty.
 default requester_organization_authenticated := false
@@ -82,7 +82,7 @@ requester_organization_authenticated if {
 }
 
 # The requesting health care professional MUST be identified by an id and a role. These are
-# locally defined by the requesting organisation and are not verified further; we only require
+# locally defined by the data user organisation and are not verified further; we only require
 # both to be present (non-empty) so the exchange can be audited.
 default requester_practitioner_identified := false
 
@@ -101,7 +101,7 @@ has_legal_basis if {
 }
 
 has_legal_basis if {
-	# The requesting organisation is part of the locally registered CareTeam.
+	# The data user organisation is part of the locally registered CareTeam.
 	input.context.local_careteam_member == true
 }
 
