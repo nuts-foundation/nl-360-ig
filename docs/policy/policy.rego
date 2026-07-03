@@ -11,8 +11,8 @@ import rego.v1
 #
 # Authorisation rules (Volume 2a):
 #   - The request must conform to the FHIR CapabilityStatement (interaction, params,
-#     (reverse) includes and profiles are verified by the source before policy evaluation;
-#     the source signals this with `capability_checked == true`).
+#     (reverse) includes and profiles are verified by the data holder organisation before policy evaluation;
+#     the data holder organisation signals this with `capability_checked == true`).
 #   - Authorisation happens on organisation-level only. The requesting organisation is
 #     identified by a `ura` and `facility_type` and MUST have been authenticated
 #     successfully. The authentication itself is reused from the Zorginzage-specification
@@ -24,7 +24,7 @@ import rego.v1
 #     the requesting organisation and are not verified (cryptographically or content-wise);
 #     authorisation of the professional and their role is performed locally and is out of
 #     scope for the source. This policy only requires both to be present, for audit purposes.
-#   - The source MUST verify the legal basis of the exchange in at least one of these ways:
+#   - The data holder organisation MUST verify the legal basis of the exchange in at least one of these ways:
 #       * consent has been registered in Mitz, or
 #       * the requesting organisation is part of the locally registered CareTeam, or
 #       * the exchange has another non-technical legal basis (e.g. a GDPR data processing
