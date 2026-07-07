@@ -1,24 +1,31 @@
 Volume 3 of this specifcation describes the agreements and specifications about content.
 
-# Data set definitions
+### Data set definitions
 
 The 360° specifications use the healthcare information models (HCIM's, also called "zibs") and FHIR specifications described as specified in the following table.
 
-Resources are retrieved based on the **FHIR profile** (`meta.profile`) through the `_profile` search parameter, no longer based on SNOMED/LOINC codes. To support different zib versions, each query accepts multiple profile canonicals as an OR list (comma-separated): the R4 profile and the STU3 `zib2017` profile. The canonicals are given without `|version`, so that all published versions of a profile match.
-
-The R4 profiles come from `nictiz.fhir.nl.r4.nl-core`, except for the medication zibs whose R4 profiles (`mp-*`) come from `nictiz.fhir.nl.r4.medicationprocess9`.
-
-> **Note — preconditions for `_profile` searching**
-> - Source systems must populate `meta.profile` on their resources with the canonical(s) listed here; if they do not, the query returns nothing.
-> - A few zibs (Ademhaling, Gezinssituatie, VermogenTotVerpleegtechnischeHandelingen, VermogenTotZelfstandigMedicatiegebruik) were retired in the zib2020 release and therefore have no R4 profile; for those only the STU3 `zib2017` profile is listed. This is flagged per row.
-
+Remarks:
+- Two versions of FHIR are supported in this specification: FHIR STU3 and FHIR R4. 
+- Two HCIM/zib releases are supported in this specification: HCIM/zib Release 2017 and HCIM/zib Release 2020.
+- There is no 1-on-1 relation between FHIR version and HCIM/zib for all informaion models.
+- For each combination of HCIM/zib and FHIR version zero or more FHIR profiles are supported.
+- Resource queries are primarily based on **FHIR profile** (`meta.profile`) through the `_profile` search parameter. 
+- Source systems **MUST** populate `meta.profile` on their resources with the canonical(s) listed here; if they do not, the query returns nothing.
+- When a combination of HCIM/zib and FHIR version is supported by multiple FHIR profiles the query accepts multiple profile canonicals as an OR list (comma-separated). 
+- The profile canonicals are expressed without `|version` so that all published versions of a profile match.
+- For a small number of combinations of HCIM ("zib") and FHIR version no FHIR profile is available. In these cases the resource queries are based on **SNOMED code** through the `code` search parameter. This is flagged per row.
+- The STU3 profiles come from `nictiz.fhir.nl.stu3.zib2017`
+- The R4 profiles come from `nictiz.fhir.nl.r4.nl-core`, for some HCIM's/zibs supplemented with `nictiz.fhir.nl.stu3.zib2017`. 
+- The R4 profiles for the medication HCIM's/zibs come from `nictiz.fhir.nl.r4.medicationprocess9`.
+- All queries are specified in the table below.
+ 
 | Zib | HTTP Method | FHIR version | Query | Supported profiles (`_profile`) |
 |-----|--------|--------------|----------|---------------------------------|
 | Ademhaling | GET | | STU3 | /Observation?patient={patientId}&_profile=http://nictiz.nl/fhir/StructureDefinition/zib-Respiration | http://nictiz.nl/fhir/StructureDefinition/zib-Respiration |
 | Ademhaling | GET | R4 | /Observation?patient={patientId}&_code=http://snomed.info/sct\|422834003 | _retired in zib2020 (R4); STU3 zib2017 only_ |
 | Adresgegevens | GET | STU3 | See Patient, Patient.address | http://fhir.nl/fhir/StructureDefinition/nl-core-patient |
 | Adresgegevens | GET | R4 | See Patient, Patient.address | http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient |
-| AlcoholGebruik | GET | STU3 | /Observation?patient={patientId}&_profile=http://nictiz.nl/fhir/StructureDefinition/nl-core-AlcoholUse,http://nictiz.nl/fhir/StructureDefinition/zib-AlcoholUse | http://nictiz.nl/fhir/StructureDefinition/nl-core-AlcoholUse<br>http://nictiz.nl/fhir/StructureDefinition/zib-AlcoholUse |
+| AlcoholGebruik | GET | STU3 | /Observation?patient={patientId}&_profile=http://nictiz.nl/fhir/StructureDefinition/zib-AlcoholUse | http://nictiz.nl/fhir/StructureDefinition/zib-AlcoholUse |
 | AlcoholGebruik | GET | R4 | /Observation?patient={patientId}&_profile=http://nictiz.nl/fhir/StructureDefinition/nl-core-AlcoholUse,http://nictiz.nl/fhir/StructureDefinition/zib-AlcoholUse | http://nictiz.nl/fhir/StructureDefinition/nl-core-AlcoholUse<br>http://nictiz.nl/fhir/StructureDefinition/zib-AlcoholUse |
 | Alert | GET | STU3 | /Flag?patient={patientId}&_profile=http://nictiz.nl/fhir/StructureDefinition/zib-Alert | http://nictiz.nl/fhir/StructureDefinition/zib-Alert |
 | Alert | GET | R4 | /Flag?patient={patientId}&_profile=http://nictiz.nl/fhir/StructureDefinition/nl-core-Alert,http://nictiz.nl/fhir/StructureDefinition/zib-Alert | http://nictiz.nl/fhir/StructureDefinition/zib-Alert<br>http://nictiz.nl/fhir/StructureDefinition/nl-core-Alert |
@@ -127,7 +134,19 @@ The R4 profiles come from `nictiz.fhir.nl.r4.nl-core`, except for the medication
 | Zorgverlener | GET | STU3 | /PractitionerRole?patient={patientId}&_profile=http://fhir.nl/fhir/StructureDefinition/nl-core-practitionerrole<br>/Practitioner?patient={patientId}&_profile=http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner | http://fhir.nl/fhir/StructureDefinition/nl-core-practitionerrole<br>http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner<br>_choose PractitionerRole and/or Practitioner according to context_ |
 | Zorgverlener | GET | R4 | /PractitionerRole?patient={patientId}&_profile=http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole<br>/Practitioner?patient={patientId}&_profile=http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner | http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole<br>http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner<br>_choose PractitionerRole and/or Practitioner according to context_ |
 
-# Conformance to Zorginzage-specification
+### CapabilityStatement
+
+- Data holder organisations **MUST** publish a CapabilityStatement for each FHIR-server. This CapabilityStatement has to be accessible for data user organisations without the need for an access token (see [Pull-sequence in Volume 2b](https://nuts-foundation.github.io/nl-360-ig/vol2b.html#pull)).
+- Data user organisations **MUST** retrieve the CapabilityStatement of a data holder organisation's FHIR-server before sending resource queries other than Patient to that FHIR-server.
+- Data user organisations **MUST** only send requests to a data holder organisation's FHIR-server that conform to its CapabilityStatement.
+
+### Pagination
+
+- Data holder organisations **MUST** support pagination with a page size from `0` up to and including `100` via the parameter `_count`.
+- Data user organisations **MAY** include a page size in resource queries via the parameter `_count` with a maximum value of 100.
+- Data user organisations **MAY** include `_count=0` (or `_summary=count`) in queries to retrieve the total _number_ of resources that match the query
+
+### Conformance to Zorginzage-specification
 
 The 360° specifications conforms to sections 5.2 and 5.3 of [Volume 3 of the Zorginzage-specification](https://build.fhir.org/ig/nuts-foundation/nl-zorginzage-ig/vol3.html).
 
