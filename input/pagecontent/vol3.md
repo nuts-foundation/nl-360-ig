@@ -21,7 +21,7 @@ Remarks:
  
 | Zib | HTTP Method | FHIR version | Query | Supported profiles (`_profile`) |
 |-----|--------|--------------|----------|---------------------------------|
-| Ademhaling | GET | | STU3 | /Observation?patient={patientId}&_profile=http://nictiz.nl/fhir/StructureDefinition/zib-Respiration | http://nictiz.nl/fhir/StructureDefinition/zib-Respiration |
+| Ademhaling | GET | STU3 | /Observation?patient={patientId}&_profile=http://nictiz.nl/fhir/StructureDefinition/zib-Respiration | http://nictiz.nl/fhir/StructureDefinition/zib-Respiration |
 | Ademhaling | GET | R4 | /Observation?patient={patientId}&_code=http://snomed.info/sct\|422834003 | _retired in zib2020 (R4); STU3 zib2017 only_ |
 | Adresgegevens | GET | STU3 | See Patient, Patient.address | http://fhir.nl/fhir/StructureDefinition/nl-core-patient |
 | Adresgegevens | GET | R4 | See Patient, Patient.address | http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient |
