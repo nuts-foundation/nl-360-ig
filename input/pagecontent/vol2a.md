@@ -28,6 +28,7 @@ The 360-specification reuses the addressing specifications of the Zorginzage-spe
 - The 360-specification does not use one fhir base url but two separate fhir base url's:
     - `fhir_base_url_stu3` for FHIR-endpoint that use FHIR version STU3
     - `fhir_base_url_r4` for FHIR-endpoint that use FHIR version R4
+- data holder organisations MUST register at least one of `fhir_base_url_stu3` and `fhir_base_url_r4` at the discovery service. This is not checked technically by the Discovery Service.
 - Discovery service presentation definitions:
     - Ontwikkel: TO DO URL GITHUB
     - Test: TO DO URL GITHUB
