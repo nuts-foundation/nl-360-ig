@@ -76,3 +76,41 @@ OAuth presentation definitions:
 - Test: TO DO URL GITHUB
 - Acceptatie: TO DO URL GITHUB
 - Productie: TO DO URL GITHUB
+
+### Audit Trail
+
+The data holder organisation **MUST** keep an audit trail of the data exchange in
+conformance with NEN 7513, the Dutch standard for logging actions on electronic health records.
+
+At a minimum, the data holder organisation **MUST** log the following events:
+
+- Each access token request
+- Each access token introspection
+- Each data request
+
+For every logged event, the audit record **MUST** capture at least:
+
+- The time of the event
+- The requesting organisation, identified by `ura` and `facility_type`
+- The requesting health care professional, identified by `identifier` and `role`
+- The patient whose data is concerned
+- The interaction and resource(s) requested
+
+Together these records **MUST** make it possible to reconstruct who requested what, when,
+and on whose behalf.
+
+The data user organisation **MUST** likewise keep an audit trail in conformance with NEN
+7513 for its local access to the retrieved data, recording which health care professional
+accessed which patient's data and when. This complements the local authorisation of the
+health care professional, which is a hard requirement of this specification.
+
+Audit records describe the access, not its content. The clinical content of the exchanged
+resources **MUST NOT** be written to the audit trail or to any other operational log; the
+audit trail records only references to the resources and the identifiers described above.
+Both organisations **MUST** ensure that patient data does not leak through logs, error
+messages, or request URLs.
+
+To limit the impact of a log breach, both organisations **SHOULD** record the patient's
+BSN in the audit trail in a locally pseudonymised form. The pseudonymisation **MUST** be
+consistent, so that all events concerning the same patient can be correlated, and
+re-identification **MUST** remain possible for legitimate audit purposes.
