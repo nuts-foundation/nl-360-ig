@@ -28,8 +28,8 @@ User -> req: request information for Patient
         ==get addresses of data holder organisation==
 
         req -> rn++: Look up data holder organisation in discovery \nGET /internal/discovery/v1/{serviceID}?organization_ura={URA}
-            note right of rn: The Zorginzage requires underlying use cases to include elements with id "organization_ura", "authorization_server_url" and "fhir_base_url" in the discovery-service-presentation-definitions 
-            rn --> req --: Found Organization B (authorization_server_url, fhir_base_url)
+            note right of rn: The 360 specification requires elements with id "organization_ura", "authorization_server_url" and one or two from "fhir_base_url_stu3" and "fhir_base_ur_r4" in the discovery-service-presentation-definitions 
+            rn --> req --: Found Organization B (authorization_server_url, and fhir_base_url_stu3 and/or fhir_base_url_r4)
         |||
 
         ==get access token==
@@ -40,48 +40,58 @@ User -> req: request information for Patient
             rn --> req-- : Access token
         |||
 
-        ==get Patient resource including patient-id==
+        loop for each found fhir endpoint (fhir_base_url_stu3 and/or fhir_base_url_r4)
 
-        note right of req
-        - POST-based Patient search on BSN
-        - use access token received in step 9
-        end note
-        req -> PEP++: POST /fhir/Patient/_search
-            PEP -> cn++ : introspect access token\nPOST /internal/auth/v2/accesstoken/introspect
-            PEP <-- cn-- : valid token + requesting_URA + USER{name,userRole,identifier}
-            PEP -> PEP: Authorization \n(Legal basis to be determined by use case, e.g. patient consent and/or treatment relationship)
-            PEP -> Fhir++: POST /fhir/Patient?search
-            return: Patient Fhir resource (with patient-id)
-        return: Patient Fhir resource (with patient-id)
+            ==get Patient resource including patient-id==
 
-        |||
-        == Retrieve capability statement of Data holder organisation==
-
-        note right of req 
-        - Retrieve CapabilityStatement to be able to only send requests that the Data holder organisation supports
-        - no access token needed
-        end note
-        req -> PEP++: GET /CapabilityStatement
-            PEP -> Fhir++: GET /CapabilityStatement
-            return: CapabilityStatement Fhir resource
-        return: CapabilityStatement Fhir resource
-        
-        |||
-        == Retrieve other resources ==
-
-        note right of req
-        - Other resources are queried using the internal patient-id of Data holder organisation received in step 16
-        - Queries MUST only contain the profiles that are part of the CapabilityStatement of the Data holder organisation
-        - Queries use access token received in step 9
-        end note
-        loop For each resource except Patient
-            req -> PEP++: GET /fhir/{resource}?patient={patient-id}
+            note right of req
+            - POST-based Patient search on BSN
+            - use access token received in step 9
+            end note
+            req -> PEP++: POST {fhir_base_url_stu3/r4}/Patient/_search
                 PEP -> cn++ : introspect access token\nPOST /internal/auth/v2/accesstoken/introspect
                 PEP <-- cn-- : valid token + requesting_URA + USER{name,userRole,identifier}
                 PEP -> PEP: Authorization \n(Legal basis to be determined by use case, e.g. patient consent and/or treatment relationship)
-                PEP -> Fhir++: GET /fhir/{resource}?patient={patient-id}
-                return: Fhir resource
-            return: Fhir resource
+                PEP -> Fhir++: POST {internal_fhir_url_stu3/r4}/Patient?search
+                return: Patient Fhir resource (with patient-id)
+            return: Patient Fhir resource (with patient-id)
+
+            |||
+
+            alt Patient is found
+
+                == Retrieve capability statement of Data holder organisation==
+
+                note right of req 
+                - Retrieve CapabilityStatement to be able to only send requests that the Data holder organisation supports
+                - no access token needed
+                end note
+                req -> PEP++: GET /CapabilityStatement
+                    PEP -> Fhir++: GET /CapabilityStatement
+                    return: CapabilityStatement Fhir resource
+                return: CapabilityStatement Fhir resource
+                
+                |||
+
+                == Retrieve other resources ==
+
+                note right of req
+                - Other resources are queried using the internal patient-id of Data holder organisation received in step 16
+                - Queries MUST only contain the profiles that are part of the CapabilityStatement of the Data holder organisation
+                - Queries use access token received in step 9
+                end note
+                loop For each resource except Patient
+                    req -> PEP++: GET /fhir/{resource}?patient={patient-id}
+                        PEP -> cn++ : introspect access token\nPOST /internal/auth/v2/accesstoken/introspect
+                        PEP <-- cn-- : valid token + requesting_URA + USER{name,userRole,identifier}
+                        PEP -> PEP: Authorization \n(Legal basis to be determined by use case, e.g. patient consent and/or treatment relationship)
+                        PEP -> Fhir++: GET /fhir/{resource}?patient={patient-id}
+                        return: Fhir resource
+                    return: Fhir resource 
+                end loop
+
+            end
+        
         end loop
 
     end loop
