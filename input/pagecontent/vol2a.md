@@ -71,7 +71,7 @@ The data holder organisation **MUST** verify the legal basis of the data exchang
 - The requesting organisation is part of the locally registered CareTeam
 - The exchange has another non-technical legal basis (e.g. a GDPR data processing agreement between the requesting organisation and the data holder organisation)
   
-Discovery service presentation definitions:
+OAuth presentation definitions:
 - Ontwikkel: TO DO URL GITHUB
 - Test: TO DO URL GITHUB
 - Acceptatie: TO DO URL GITHUB
