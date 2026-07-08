@@ -23,8 +23,17 @@ The mechanism of searching and retrieving the patient id is described in the zor
 
 ### Addressing
 
-The 360-specification reuses the addressing specifications of the Zorginzage-specification.
-The 360-specification uses the following use-case-identifier `360-graden`.
+The 360-specification reuses the addressing specifications of the Zorginzage-specification. The following changes or additions are applied:
+- The 360-specification uses the following use-case-identifier `360-graden`.
+- The 360-specification does not use one fhir base url but two separate fhir base url's:
+    - `fhir_base_url_stu3` for FHIR-endpoint that use FHIR version STU3
+    - `fhir_base_url_r4` for FHIR-endpoint that use FHIR version R4
+- data holder organisations MUST register at least one of `fhir_base_url_stu3` and `fhir_base_url_r4` at the discovery service. This is not checked technically by the Discovery Service.
+- Discovery service presentation definitions:
+    - Ontwikkel: TO DO URL GITHUB
+    - Test: TO DO URL GITHUB
+    - Acceptatie: TO DO URL GITHUB
+    - Productie: TO DO URL GITHUB
 
 ### Authorisation
 
@@ -61,6 +70,12 @@ The data holder organisation **MUST** verify the legal basis of the data exchang
 - Consent has been registered in Mitz
 - The requesting organisation is part of the locally registered CareTeam
 - The exchange has another non-technical legal basis (e.g. a GDPR data processing agreement between the requesting organisation and the data holder organisation)
+  
+OAuth presentation definitions:
+- Ontwikkel: TO DO URL GITHUB
+- Test: TO DO URL GITHUB
+- Acceptatie: TO DO URL GITHUB
+- Productie: TO DO URL GITHUB
 
 ### Performance Considerations
 
