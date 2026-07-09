@@ -30,10 +30,10 @@ The 360-specification reuses the addressing specifications of the Zorginzage-spe
     - `fhir_base_url_r4` for FHIR-endpoint that use FHIR version R4
 - data holder organisations MUST register at least one of `fhir_base_url_stu3` and `fhir_base_url_r4` at the discovery service. This is not checked technically by the Discovery Service.
 - Discovery service presentation definitions:
-    - Ontwikkel: TO DO URL GITHUB
-    - Test: TO DO URL GITHUB
-    - Acceptatie: TO DO URL GITHUB
-    - Productie: TO DO URL GITHUB
+    - Ontwikkel: [link](https://raw.githubusercontent.com/nuts-foundation/nl-360-ig/002d9347275e93f28bce70c9cf2e0ea56d3c88ba/docs/discovery-service-presentation-definitions/ontwikkel/discovery_360_dev.json)
+    - Test: [link](https://raw.githubusercontent.com/nuts-foundation/nl-360-ig/refs/heads/main/docs/discovery-service-presentation-definitions/test/discovery_360_test.json)
+    - Acceptatie: [link](https://raw.githubusercontent.com/nuts-foundation/nl-360-ig/refs/heads/main/docs/discovery-service-presentation-definitions/acceptatie/discovery_360_acc.json)
+    - Productie: [link](https://raw.githubusercontent.com/nuts-foundation/nl-360-ig/refs/heads/main/docs/discovery-service-presentation-definitions/productie/discovery_360_prod.json)
 
 ### Authorisation
 
@@ -72,10 +72,10 @@ The data holder organisation **MUST** verify the legal basis of the data exchang
 - The exchange has another non-technical legal basis (e.g. a GDPR data processing agreement between the requesting organisation and the data holder organisation)
   
 OAuth presentation definitions:
-- Ontwikkel: TO DO URL GITHUB
-- Test: TO DO URL GITHUB
-- Acceptatie: TO DO URL GITHUB
-- Productie: TO DO URL GITHUB
+- Ontwikkel: [link](https://raw.githubusercontent.com/nuts-foundation/nl-360-ig/refs/heads/main/docs/oauth-presentation-definitions/ontwikkel/policy_360_dev.json)
+- Test: [link](https://raw.githubusercontent.com/nuts-foundation/nl-360-ig/refs/heads/main/docs/oauth-presentation-definitions/test/policy_360_test.json)
+- Acceptatie: [link](https://raw.githubusercontent.com/nuts-foundation/nl-360-ig/refs/heads/main/docs/oauth-presentation-definitions/acceptatie/policy_360_acc.json)
+- Productie: [link](https://raw.githubusercontent.com/nuts-foundation/nl-360-ig/refs/heads/main/docs/oauth-presentation-definitions/productie/policy_360_prod.json)
 
 ### Performance Considerations
 
