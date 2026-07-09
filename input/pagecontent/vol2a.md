@@ -154,7 +154,7 @@ For each shown resource, the following **MUST** be available to the data user or
 - **The data holder** — the care organisation the resource originates from.
 - **The date** — the date on which the resource was registered in the source.
 - **The role or persona of the registering health care professional**, when the
-  underlying zib provides for this.
+  underlying zib supports this.
 
 The following FHIR elements are used to convey this lineage:
 
