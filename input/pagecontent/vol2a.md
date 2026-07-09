@@ -110,7 +110,8 @@ audit trail records only references to the resources and the identifiers describ
 Both organisations **MUST** ensure that patient data does not leak through logs, error
 messages, or request URLs.
 
-To limit the impact of a log breach, both organisations **SHOULD** record the patient's
-BSN in the audit trail in a locally pseudonymised form. The pseudonymisation **MUST** be
-consistent, so that all events concerning the same patient can be correlated, and
-re-identification **MUST** remain possible for legitimate audit purposes.
+To avoid storing BSNs in the audit trail, both organisations **SHOULD** record the patient
+by the FHIR Patient logical id used in the data exchange rather than by BSN. This
+identifier is assigned by the data holder organisation and already resolves to the patient
+through the existing FHIR store, so all events concerning the same patient can be
+correlated, and re-identification remains possible for legitimate audit purposes.
