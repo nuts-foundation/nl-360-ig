@@ -63,6 +63,8 @@ User -> req: request information for Patient
                 == Retrieve capability statement of Data holder organisation==
 
                 note right of req 
+                - CapabilityStatemment can also be retrieved in a separate (periodic) process. 
+                - When the data holder organisations has already stored a current version of the CapabilityStatemment it is not needed to retrieve it here.
                 - Retrieve CapabilityStatement to be able to only send requests that the Data holder organisation supports
                 - no access token needed
                 end note

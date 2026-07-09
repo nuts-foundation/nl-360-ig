@@ -122,8 +122,7 @@ Remarks:
 
 ### CapabilityStatement
 
-- Data holder organisations **MUST** publish a CapabilityStatement for each FHIR-server. This CapabilityStatement has to be accessible for data user organisations without the need for an access token (see [Pull-sequence in Volume 2b](https://nuts-foundation.github.io/nl-360-ig/vol2b.html#pull)).
-- Data user organisations **MUST** retrieve the CapabilityStatement of a data holder organisation's FHIR-server before sending resource queries other than Patient to that FHIR-server.
+- Data holder organisations **MUST** publish a CapabilityStatement for each FHIR-server. 
 - Data user organisations **MUST** only send requests to a data holder organisation's FHIR-server that conform to its CapabilityStatement.
 
 ### Pagination
