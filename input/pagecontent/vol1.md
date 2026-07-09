@@ -18,7 +18,7 @@ vastgelegd in het CareTeam van de patient.
 ### Relatie to het Functioneel Ontwerp
 
 Deze implementatiegids geeft technische invulling aan
-het [Functioneel Ontwerp Toepassing op Nuts 360° cliëntbeeld](https://github.com/nuts-foundation/nl-360-ig/raw/f9e79a041d0ed197eba06474ddeae1c13cc28a3e/docs/fo.pdf).
+het [Functioneel Ontwerp Toepassing op Nuts 360° cliëntbeeld](https://github.com/nuts-foundation/nl-360-ig/raw/7299169b824e779732c3e7b05a719a62550ca78e/docs/FO%202026-06-30.pdf).
 
 Waar volume 2 een technisch inhoudelijk uitwerking bevat volgt hier een toelichting op de connectie met het functioneel
 ontwerp.
