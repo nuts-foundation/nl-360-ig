@@ -156,7 +156,7 @@ For each shown resource, the following **MUST** be available to the data user or
 - **The role or persona of the registering health care professional**, when the
   underlying zib supports this.
 
-The following FHIR elements are used to convey this lineage:
+The following technical specifications are used to convey this lineage:
 
 - **Data holder.** The data holder is identified by the exchange context: each resource is
   attributed to the `ura` of the endpoint it was retrieved from. The data user
