@@ -145,3 +145,38 @@ by the FHIR Patient logical id used in the data exchange rather than by BSN. Thi
 identifier is assigned by the data holder organisation and already resolves to the patient
 through the existing FHIR store, so all events concerning the same patient can be
 correlated, and re-identification remains possible for legitimate audit purposes.
+
+### Lineage
+
+The origin of every resource shown in the 360-overview is required to always be traceable.
+For each shown resource, the following **MUST** be available to the data user organisation:
+
+- **The data holder** — the care organisation the resource originates from.
+- **The date** — the date on which the resource was registered in the source.
+- **The role or persona of the registering health care professional**, when the
+  underlying zib supports this.
+
+The following technical specifications are used to convey this lineage:
+
+- **Data holder.** The data holder is identified by the exchange context: each resource is
+  attributed to the `ura` of the endpoint it was retrieved from. The data user
+  organisation **MUST** preserve this attribution when aggregating data from multiple data
+  holders into a single overview.
+- **Date.** The registration date of the resource in the source **SHOULD** be used,
+  conveyed through the `.meta.lastUpdated` element of the resource. Where a zib provides a dedicated recorded
+  date, that element **MAY** be used instead.
+- **Role or persona.** For a number of zibs, the registering professional is referenced from the zib (for example via
+  `performer`, `recorder`, `author` or `asserter`). Their role **SHOULD** be conveyed
+  through the referenced `PractitionerRole.code`, or an equivalent resource-specific role
+  element.
+
+For administrative data (such as contact registration or correspondence) a person name —
+and where relevant contact details such as an email address or telephone number — **MAY**
+be shown. For clinical data, the role or function of the registering professional is
+sufficient.
+
+Full traceability to the individual professional who registered a resource is **not** part of
+the data availability offered through the 360° specification. It is safeguarded by the NEN7513-conforming
+logging in the data holder's source systems (see also section [Audit Trail](#audit-trail)). A data user that needs this information can
+request it from the data holder organisation.
+
