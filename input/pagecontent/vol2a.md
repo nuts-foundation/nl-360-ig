@@ -176,7 +176,7 @@ be shown. For clinical data, the role or function of the registering professiona
 sufficient.
 
 Full traceability to the individual professional who registered a resource is **not** part of
-the data availability offered through ToN 360°. It is safeguarded by the WGBO-conforming
+the data availability offered through the 360° specification. It is safeguarded by the NEN7513-conforming
 logging in the data holder's source systems. A data user that needs this information can
 request it from the data holder.
 
