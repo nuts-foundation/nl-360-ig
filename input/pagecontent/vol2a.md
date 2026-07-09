@@ -164,8 +164,7 @@ The following FHIR elements are used to convey this lineage:
   holders into a single overview.
 - **Date.** The registration date of the resource in the source **SHOULD** be used,
   conveyed through `Resource.meta.lastUpdated`. Where a zib provides a dedicated recorded
-  date, that element **MAY** be used instead; the zib mapping and the rego policy clarify
-  which element to use per ZIB.
+  date, that element **MAY** be used instead.
 - **Role.** The registering professional is referenced from the zib (for example via
   `performer`, `recorder`, `author` or `asserter`). Their role **SHOULD** be conveyed
   through the referenced `PractitionerRole.code`, or an equivalent resource-specific role
