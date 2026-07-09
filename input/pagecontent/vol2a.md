@@ -148,7 +148,7 @@ correlated, and re-identification remains possible for legitimate audit purposes
 
 ### Lineage
 
-The origin of every resource shown in the overview is therefore always traceable.
+The origin of every resource shown in the 360-overview is required to always be traceable.
 For each shown resource, the following **MUST** be available to the data user organisation:
 
 - **The data holder** — the care organisation the resource originates from.
