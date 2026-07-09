@@ -16,3 +16,9 @@ This specification reuses the Pull sequence diagram as defined in the Zorginzage
 #### Step 5 details
 
 Use the following ServiceID: "VersneldVerbindenDiscoveryService"
+
+### Pull of CapabilityStatement
+
+- Data holder organisations **MUST** make the CapabilityStatement per FHIR-server accessible for data user organisations without the need for an access token.
+- Data user organisations **MUST** retrieve the CapabilityStatement of a data holder organisation's FHIR-server before sending resource queries other than Patient to that FHIR-server.
+- Data user organisations **MUST** retrieve CapabilityStatements as specified in the [Pull-sequence](https://nuts-foundation.github.io/nl-360-ig/vol2b.html#pull) _OR_ in a separate (periodic) process.
