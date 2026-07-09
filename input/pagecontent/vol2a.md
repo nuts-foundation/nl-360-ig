@@ -163,7 +163,7 @@ The following technical specifications are used to convey this lineage:
   organisation **MUST** preserve this attribution when aggregating data from multiple data
   holders into a single overview.
 - **Date.** The registration date of the resource in the source **SHOULD** be used,
-  conveyed through `Resource.meta.lastUpdated`. Where a zib provides a dedicated recorded
+  conveyed through the `.meta.lastUpdated` element of the resource. Where a zib provides a dedicated recorded
   date, that element **MAY** be used instead.
 - **Role.** The registering professional is referenced from the zib (for example via
   `performer`, `recorder`, `author` or `asserter`). Their role **SHOULD** be conveyed
