@@ -165,7 +165,7 @@ The following technical specifications are used to convey this lineage:
 - **Date.** The registration date of the resource in the source **SHOULD** be used,
   conveyed through the `.meta.lastUpdated` element of the resource. Where a zib provides a dedicated recorded
   date, that element **MAY** be used instead.
-- **Role.** The registering professional is referenced from the zib (for example via
+- **Role or persona.** For a number of zibs, the registering professional is referenced from the zib (for example via
   `performer`, `recorder`, `author` or `asserter`). Their role **SHOULD** be conveyed
   through the referenced `PractitionerRole.code`, or an equivalent resource-specific role
   element.
