@@ -127,9 +127,18 @@ Remarks:
 
 ### Pagination
 
-- Data holder organisations **MUST** support pagination with a page size from `0` up to and including `100` via the parameter `_count`.
-- Data user organisations **MAY** include a page size in resource queries via the parameter `_count` with a maximum value of 100.
-- Data user organisations **MAY** include `_count=0` (or `_summary=count`) in queries to retrieve the total _number_ of resources that match the query
+- Data holder organisations **MUST** support pagination with a page size from `0` up to and including `100` via the
+  parameter `_count`.
+- Data user organisations **MAY** include a page size in resource queries via the parameter `_count` with a maximum
+  value of 100.
+- Data user organisations **MAY** include `_count=0` (or `_summary=count`) in queries to retrieve the total _number_ of
+  resources that match the query
+- Data holder organisations **MAY** return fewer resources on a page than the requested `_count`. Data user
+  organisations **MUST** be able to handle this, and **MUST** use the `next` link of the returned bundle — not the
+  number of resources returned — to determine whether further pages are available.
+- Pagination is not guaranteed to be stable: a data set may change between page requests. Data user organisations **MUST
+  ** be able to handle a subsequent or previous page that contains duplicate resources, or that omits a resource, as a
+  result of resources being added or removed at the data holder organisation between requests.
 
 ### Conformance to Zorginzage-specification
 
