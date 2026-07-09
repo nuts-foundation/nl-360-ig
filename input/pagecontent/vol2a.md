@@ -106,3 +106,42 @@ Consistent with the principle that the data holder organisation remains the
 authoritative source, cached data **MUST NOT** be retained beyond the active viewing
 session, and in any case **MUST** be discarded within 15 minutes of retrieval. The data
 user organisation **MUST NOT** store the retrieved data as a durable copy.
+
+### Audit Trail
+
+The data holder organisation **MUST** keep an audit trail of the data exchange in
+conformance with NEN 7513, the Dutch standard for logging actions on electronic health records.
+
+At a minimum, the data holder organisation **MUST** log the following events:
+
+- Each access token request
+- Each access token introspection
+- Each data request
+
+For every logged event, the audit record **MUST** capture at least:
+
+- The time of the event
+- The requesting organisation, identified by `ura` and `facility_type`
+- The requesting health care professional, identified by `identifier` and `role`
+- The patient whose data is concerned
+- The interaction and resource(s) requested
+
+Together these records **MUST** make it possible to reconstruct who requested what, when,
+and on whose behalf.
+
+The data user organisation **MUST** likewise keep an audit trail in conformance with NEN
+7513 for its local access to the retrieved data, recording which health care professional
+accessed which patient's data and when. This complements the local authorisation of the
+health care professional, which is a hard requirement of this specification.
+
+Audit records describe the access, not its content. The clinical content of the exchanged
+resources **MUST NOT** be written to the audit trail or to any other operational log; the
+audit trail records only references to the resources and the identifiers described above.
+Both organisations **MUST** ensure that patient data does not leak through logs, error
+messages, or request URLs.
+
+To avoid storing BSNs in the audit trail, both organisations **SHOULD** record the patient
+by the FHIR Patient logical id used in the data exchange rather than by BSN. This
+identifier is assigned by the data holder organisation and already resolves to the patient
+through the existing FHIR store, so all events concerning the same patient can be
+correlated, and re-identification remains possible for legitimate audit purposes.
