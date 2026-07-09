@@ -67,7 +67,7 @@ from the request.
 
 The data holder organisation **MUST** verify the legal basis of the data exchange in at least one of these ways:
 
-- Consent has been registered in Mitz
+- Consent has been registered conform [section Consent of the Zorginzage-specification](https://nuts-foundation.github.io/nl-zorginzage-ig/vol2a.html#consent)
 - The requesting organisation is part of the locally registered CareTeam
 - The exchange has another non-technical legal basis (e.g. a GDPR data processing agreement between the requesting organisation and the data holder organisation)
   
