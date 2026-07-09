@@ -76,3 +76,33 @@ OAuth presentation definitions:
 - Test: TO DO URL GITHUB
 - Acceptatie: TO DO URL GITHUB
 - Productie: TO DO URL GITHUB
+
+### Performance Considerations
+
+This specification does not impose hard real-time guarantees on the data exchange. The
+following performance expectations apply, in line with the functional design:
+
+- A data holder organisation **SHOULD** return a response for a single resource query
+  within 4 seconds.
+- Retrieving a complete data set **SHOULD** complete within 30 seconds.
+- These figures are expectations, not enforced service levels. There is no technical
+  enforcement of response times during the data exchange.
+
+Because the data exchange consists solely of read operations, the data holder
+organisation can horizontally scale to serve concurrent requests. The data user
+organisation **SHOULD** exploit this by issuing the individual requests of a data set
+in parallel rather than sequentially.
+
+The data user organisation **SHOULD** apply a timeout of 60 seconds to each individual
+request. A data holder organisation that cannot meet these expectations for a given
+request **SHOULD** still return a valid FHIR response rather than failing silently.
+
+To protect the data holder organisation against repeated identical requests, the data
+user organisation **SHOULD** cache a retrieved response and reuse it rather than
+re-requesting the same data. The same resource **SHOULD NOT** be refetched more than
+once every 5 minutes **for the same user session**.
+
+Consistent with the principle that the data holder organisation remains the
+authoritative source, cached data **MUST NOT** be retained beyond the active viewing
+session, and in any case **MUST** be discarded within 15 minutes of retrieval. The data
+user organisation **MUST NOT** store the retrieved data as a durable copy.
