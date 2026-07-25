@@ -3,6 +3,16 @@
 Deze implementatiegids 360-graden-cliëntbeeld bevat de afspraken en specificaties die nodig zijn voor de use case "360
 graden cliëntbeeld". Het doel van deze implementatiegids is het technisch definiëren van deze use case.
 
+### Doel van de toepassing
+
+De toepassing op Nuts 360° cliëntbeeld stelt zorgprofessionals in staat om op elk gewenst moment een integraal beeld op
+te roepen van de cliënt waarover zij aanvullende informatie nodig hebben. Dit beeld geeft een zo volledig mogelijk
+overzicht van de gezondheidssituatie van de cliënt en is beschikbaar voor alle zorgprofessionals die bij het zorgpad van
+deze cliënt betrokken zijn. Het 360° cliëntbeeld heeft als doel de informatiepositie van zorgprofessionals te verbeteren
+in situaties van transmurale samenwerking rondom een cliënt. Het 360° cliëntbeeld kan ook worden ingezet in acute
+situaties (bijvoorbeeld als wijkverpleegkundige bij een val of reanimatiesituatie), maar de praktijksituatie ‘acuut’
+wordt niet apart uitgewerkt als dat al door andere toepassingen wordt afgedekt.
+
 ### Relatie tot generieke Zorginzage-specificatie
 
 Deze implementatiegids is gebaseerd op
@@ -18,7 +28,7 @@ vastgelegd in het CareTeam van de patient.
 ### Relatie to het Functioneel Ontwerp
 
 Deze implementatiegids geeft technische invulling aan
-het [Functioneel Ontwerp Toepassing op Nuts 360° cliëntbeeld](https://github.com/nuts-foundation/nl-360-ig/raw/7299169b824e779732c3e7b05a719a62550ca78e/docs/FO%202026-06-30.pdf).
+het [Functioneel Ontwerp Toepassing op Nuts 360° cliëntbeeld](FO-Nuts-360-clientbeeld.pdf).
 
 Waar volume 2 een technisch inhoudelijk uitwerking bevat volgt hier een toelichting op de connectie met het functioneel
 ontwerp.
