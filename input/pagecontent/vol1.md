@@ -25,28 +25,18 @@ De 360-graden-cliëntbeeld toepassing heeft er tot die tijd voor gekozen om een 
 een zorgaanbieder toe te staan op het moment dat er een verwerkersovereenkomst is, of de zorgaanbieder lokaal is
 vastgelegd in het CareTeam van de patient.
 
-### Relatie to het Functioneel Ontwerp
+### Relatie tot het Functioneel Ontwerp
 
 Deze implementatiegids geeft technische invulling aan
-het [Functioneel Ontwerp Toepassing op Nuts 360° cliëntbeeld](FO-Nuts-360-clientbeeld.pdf).
+het [Functioneel Ontwerp Toepassing op Nuts 360° cliëntbeeld](FO-Nuts-360-clientbeeld.pdf). Een overzicht dat per functionele eis of wens uit het functioneel ontwerp laat zien in hoeverre die eis of wens in deze implementatiegids is afgedekt, is te vinden in de [Dekkingsmatrix FO en TO ToN 360° cliëntbeeld](Dekkingsmatrix_FO_TO_ToN_360_clientbeeld.pdf).
 
-Waar volume 2 een technisch inhoudelijk uitwerking bevat volgt hier een toelichting op de connectie met het functioneel
-ontwerp.
+Waar volume 2 van deze implementatiegids een technisch-inhoudelijke uitwerking bevat, volgt hier een toelichting op de connectie met het functioneel ontwerp.
 
-Het FO schets voor **autorisatie** een situatie waarbij het wenselijk is regionale variatie in te bouwen. Voor
-bronsystemen is er daarom voor gekozen alleen op organisatie te autoriseren. Wel is het verplicht zorgverlener
-informatie mee te geven zodat het bronsysteem een audit trail kan opbouwen. Het raadplegende systeem moet daarnaast op
-basis van de regionale afspraken lokaal de autorisatie op zorgverlenerrol toepassen.
+Het functioneel ontwerp schetst voor **autorisatie** een situatie waarbij het wenselijk is regionale variatie in te bouwen. Voor bronsystemen is er daarom voor gekozen alleen op organisatie te autoriseren. Wel is het verplicht zorgverlener informatie mee te geven zodat het bronsysteem een audit trail kan opbouwen. Het raadplegende systeem moet daarnaast op basis van de regionale afspraken lokaal de autorisatie op zorgverlenerrol toepassen.
 
-Voor **toestemmingen** laat het FO open op welke manier die toestemming is vastgelegd. De techniek dwingt echter af dat
-we de mogelijkheden benoemen zodat deze controle ook bij de bron kan worden ingebouwd. Er is daarom omschreven in volume
-2 dat er drie manieren zijn waarop toestemming verleend kan worden in het bronsysteem.
+Voor **toestemmingen** laat het functioneel ontwerp open op welke manier die toestemming is vastgelegd. De techniek dwingt echter af dat we de mogelijkheden benoemen zodat deze controle ook bij de bron kan worden ingebouwd. Er is daarom omschreven in volume 2 dat er drie manieren zijn waarop toestemming verleend kan worden in het bronsysteem.
 
-Als uitgangspunt wordt er in het FO omschreven dat er gebruik wordt gemaakt van Zorginformatiebouwstenen (Zibs) en FHIR API's
-. Het is gebruikelijk in FHIR om per resource (of vooraf gedefinieerde samenstelling resources) een bevraging te doen. Ook is er vastgelegd in
-het FO dat een progressieve opbouw wenselijk is zodat gegevens kunnen worden weergegeven op het moment dat ze
-beschikbaar komen, en weergave niet pas kan plaatsvinden wanneer de gehele dataset is overgebracht. Om die redenen is ervoor gekozen queries op het niveau
-van zibs en niet op toepassing te organiseren. Dit is in lijn met alle bestaande Nictiz-informatiestandaarden en Nuts-toepassingen.
+Als uitgangspunt wordt er in het functioneel ontwerp omschreven dat er gebruik wordt gemaakt van Zorginformatiebouwstenen (Zibs) en FHIR API's. Het is gebruikelijk in FHIR om per resource (of vooraf gedefinieerde samenstelling resources) een bevraging te doen. Ook is er vastgelegd in het functioneel ontwerp dat een progressieve opbouw wenselijk is zodat gegevens kunnen worden weergegeven op het moment dat ze beschikbaar komen, en weergave niet pas kan plaatsvinden wanneer de gehele dataset is overgebracht. Om die redenen is ervoor gekozen queries op het niveau van zibs en niet op toepassing te organiseren. Dit is in lijn met alle bestaande Nictiz-informatiestandaarden en Nuts-toepassingen.
 
 ### Rollen en uitvoerders
 
