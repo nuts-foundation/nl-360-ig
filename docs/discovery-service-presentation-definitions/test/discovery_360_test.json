@@ -1,6 +1,6 @@
 {
   "id": "360-graden",
-  "endpoint": "https://nuts.test-datakluis.shared.topicuszorg.nl/discovery/pzp",
+  "endpoint": "https://development.nedap-nuts.nl/discovery/360-graden",
   "presentation_max_validity": 259200,
   "presentation_definition": {
     "id": "360-graden",
@@ -112,6 +112,28 @@
               "purpose": "Used by clients to request OAuth2 access tokens.",
               "path": [
                 "$.credentialSubject.authServerURL"
+              ],
+              "filter": {
+                "type": "string"
+              }
+            },
+            {
+              "id": "fhir_base_url_stu3",
+              "purpose": "Base URL of the STU3 FHIR API.",
+              "optional": true,
+              "path": [
+                "$.credentialSubject.fhirStu3BaseURL"
+              ],
+              "filter": {
+                "type": "string"
+              }
+            },
+            {
+              "id": "fhir_base_url_r4",
+              "purpose": "Base URL of the R4 FHIR API.",
+              "optional": true,
+              "path": [
+                "$.credentialSubject.fhirR4BaseURL"
               ],
               "filter": {
                 "type": "string"

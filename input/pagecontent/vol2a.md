@@ -30,7 +30,7 @@ The 360-specification reuses the addressing specifications of the Zorginzage-spe
     - `fhir_base_url_r4` for FHIR-endpoint that use FHIR version R4
 - data holder organisations MUST register at least one of `fhir_base_url_stu3` and `fhir_base_url_r4` at the discovery service. This is not checked technically by the Discovery Service.
 - Discovery service presentation definitions:
-    - Ontwikkel: [link](https://raw.githubusercontent.com/nuts-foundation/nl-360-ig/002d9347275e93f28bce70c9cf2e0ea56d3c88ba/docs/discovery-service-presentation-definitions/ontwikkel/discovery_360_dev.json)
+    - Ontwikkel: [link](https://raw.githubusercontent.com/nuts-foundation/nl-360-ig/refs/heads/main/docs/discovery-service-presentation-definitions/ontwikkel/discovery_360_dev.json)
     - Test: [link](https://raw.githubusercontent.com/nuts-foundation/nl-360-ig/refs/heads/main/docs/discovery-service-presentation-definitions/test/discovery_360_test.json)
     - Acceptatie: [link](https://raw.githubusercontent.com/nuts-foundation/nl-360-ig/refs/heads/main/docs/discovery-service-presentation-definitions/acceptatie/discovery_360_acc.json)
     - Productie: [link](https://raw.githubusercontent.com/nuts-foundation/nl-360-ig/refs/heads/main/docs/discovery-service-presentation-definitions/productie/discovery_360_prod.json)
@@ -179,4 +179,3 @@ Full traceability to the individual professional who registered a resource is **
 the data availability offered through the 360° specification. It is safeguarded by the NEN7513-conforming
 logging in the data holder's source systems (see also section [Audit Trail](#audit-trail)). A data user that needs this information can
 request it from the data holder organisation.
-
