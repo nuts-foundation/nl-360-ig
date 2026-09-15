@@ -4,7 +4,7 @@ Please see [Volume 2b of the Zorginzage-specification](https://nuts-foundation.g
 
 #### Step 1 details
 
-Use the following ServiceID: "VersneldVerbindenDiscoveryService"
+Use the following ServiceID: "360-graden"
 
 ### Pull
 
@@ -15,7 +15,7 @@ This specification reuses the Pull sequence diagram as defined in the Zorginzage
 
 #### Step 5 details
 
-Use the following ServiceID: "VersneldVerbindenDiscoveryService"
+Use the following ServiceID: "360-graden"
 
 ### Pull of CapabilityStatement
 

@@ -28,7 +28,7 @@ User -> req: request information for Patient
         ==get addresses of data holder organisation==
 
         req -> rn++: Look up data holder organisation in discovery \nGET /internal/discovery/v1/{serviceID}?organization_ura={URA}
-            note right of rn: The 360 specification requires elements with id "organization_ura", "authorization_server_url" and one or two from "fhir_base_url_stu3" and "fhir_base_ur_r4" in the discovery-service-presentation-definitions 
+            note right of rn: The 360 specification requires elements with id "organization_ura", "authorization_server_url" and one or two from "fhir_base_url_stu3" and "fhir_base_url_r4" in the discovery-service-presentation-definitions
             rn --> req --: Found Organization B (authorization_server_url, and fhir_base_url_stu3 and/or fhir_base_url_r4)
         |||
 
